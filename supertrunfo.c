@@ -51,11 +51,11 @@ printf("qual o numero de pontos turisticos do seu estado: \n");
                 //fim das informações da carta 2
                 //dados coletados em ordem
 printf("       CARTA 1 \n");
-printf("Codigo da carta: %s   Nome do estado: %s   População: %f \n", codigo1, nome1, populacao1);
-printf("Área: %f   PIB: %f   Numero de pontos turisticos: %d \n", area1, PIB1, ndpt1);
+printf("Codigo da carta: %s   Nome do estado: %s   População: %.3f  \n", codigo1, nome1, populacao1);
+printf("Área: %.3f Km²  PIB: R$%.3f   Numero de pontos turisticos: %d \n", area1, PIB1, ndpt1);
 
 printf("       CARTA 2 \n");
-printf("Codigo da carta: %s   Nome do estado: %s   População: %f \n", codigo2, nome2, populacao2);
-printf("Área: %f   PIB: %f   Numero de pontos turisticos: %d \n", area2, PIB2, ndpt2);
+printf("Codigo da carta: %s   Nome do estado: %s   População: %.3f \n", codigo2, nome2, populacao2);
+printf("Área: %.3f Km²  PIB: R$%.3f   Numero de pontos turisticos: %d \n", area2, PIB2, ndpt2);
  
  }
