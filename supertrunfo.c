@@ -1,7 +1,7 @@
 #include <stdio.h>
  int main() {
 
- char codigo1 [10], codigo2 [10];
+ char codigo1[5], codigo2[5];
  char nome1[10], nome2[10];
  float populacao1, populacao2;
  float area1, area2;
@@ -14,10 +14,10 @@
 printf("DESAFIO SUPERTRUNFO \n");
                  //inicio das informações da CARTA 1           
 printf("        Carta 1  \n");
-printf("digite o codigo do seu estado:(ex: A01,B03...) \n");
+printf("digite o codigo do seu estado:(ex: A01,B03... \n");//não descobri o porque do erro na codificação "%s" mesmo que o codigo esteja funcionando corretamente 
  scanf("%s", &codigo1);//armazena o codigo do estado selecionado pelo jogador
 
-printf("digite o nome do seu estado(abreviado): \n");
+printf("digite o nome do seu estado(abreviado): \n");// não descobri o porque do erro na codificação "%s" mesmo que o codigo esteja funcionando corretamente
  scanf("%s", &nome1);//armazena o nome do estado selecionado pelo jogador
 
 printf("digite a população do estado(n° inteiro): \n");
@@ -54,8 +54,8 @@ printf("digite a área do estado: \n");
 printf("digite o PIB do estado: \n");
  scanf("%f", &PIB2);//armazena o pib do estado
 
-printf("qual o numero de pontos turisticos do seu estado: \n");
- scanf("%d", &ndpt2);//armazena o numero de pontos turisticos do estado
+printf("qual o numero de pontos turisticos do seu estado:\n");
+ scanf("%d", &ndpt2 );//armazena o numero de pontos turisticos do estado
  
 dpp2 = populacao2 / area2; // calculo da dencidade populacional
 PIBPC2 = PIB2 /  populacao2 * 100000000; //calculo do pib per capital 
@@ -64,28 +64,63 @@ superpoder2 = populacao2 + area2 + PIB2 + ndpt2 + PIBPC2 + (1/dpp2); // calculo 
 
 
                 //dados coletados em ordem
-printf("\n       CARTA 1 \n\n");
-printf("Codigo da carta: %s  \n Nome do estado: %s  \n População: %.0f  \n", codigo1, nome1, populacao1);
-printf("Área: %.2f Km² \n PIB: R$%.2f Bilhões de reais  \n Numero de pontos turisticos: %d \n", area1, PIB1, ndpt1);
-printf("Dencidade populacional: %.2f hab/km² \n PIB per capital: %.2f reais \n", dpp1, PIBPC1);
-printf("Super poder: %.0f \n\n", superpoder1); // fim das informações da carta 1
+printf("\n       CARTA 1 \n");
+printf("Codigo da carta: %s  \nNome do estado: %s  \nPopulação: %.0f  \n", codigo1, nome1, populacao1);
+printf("Área: %.2f Km² \nPIB: R$%.2f Bilhões de reais  \nNumero de pontos turisticos: %d \n", area1, PIB1, ndpt1);
+printf("Dencidade populacional: %.2f hab/km² \nPIB per capital: %.2f reais \n", dpp1, PIBPC1);
+printf("Super poder: %.0f \n", superpoder1); // fim das informações da carta 1
 
-printf("       CARTA 2 \n\n");
-printf("Codigo da carta: %s  \n Nome do estado: %s  \n População: %.0f  \n", codigo2, nome2, populacao2);
-printf("Área: %.2f Km² \n PIB: R$%.2f bilhoes de reais \n Numero de pontos turisticos: %d \n", area2, PIB2, ndpt2);
-printf("Dencidade populacional: %.2f hab/km² \n PIB per capital: %.2f reais \n", dpp2, PIBPC2);
-printf("Super poder: %.0f \n\n", superpoder2); //fim das informações da carta 2
+printf("\n       CARTA 2 \n");
+printf("Codigo da carta: %s  \nNome do estado: %s  \nPopulação: %.0f  \n", codigo2, nome2, populacao2);
+printf("Área: %.2f Km² \n PIB: R$%.2f bilhoes de reais \nNumero de pontos turisticos: %d \n", area2, PIB2, ndpt2);
+printf("Dencidade populacional: %.2f hab/km² \nPIB per capital: %.2f reais \n", dpp2, PIBPC2);
+printf("Super poder: %.0f \n", superpoder2); //fim das informações da carta 2
 
 //resultado da comparação das cartas 1 e 2
-printf("      !!*****RESULTADO*****!! \n");
-printf("Se o resultado for (1) a CARTA 1 ganhou se o resultado for (0) a CARTA 2 ganhou. \n"); // informações sobre como funciona o calculo de quem venceu 
-printf("população: (%d) \n", populacao1 > populacao2); // população caomparação
-printf("Área: (%d) \n", area1 > area2); //área comparação
-printf("PIB: (%d) \n", PIB1 > PIB2); //pib comparação
-printf("Numero de pontos turisticos: (%d) \n", ndpt1 > ndpt2); //numero de pontos turisticos comparação
-printf("Dencidade populacional: (%d) \n", (1/dpp1 > 1/dpp2)); //dencidade populacional comparação
-printf("PIB per capital: (%d) \n", PIBPC1 > PIBPC2); //pib per capital comparação 
-printf("super poder: (%d)", superpoder1 > superpoder2); // super poder comparação
+printf("\n      !!*****RESULTADO*****!! \n");
+
+if (populacao1 > populacao2)
+{ printf("CARTA 1 venceu na disputa de População: %.0f \n", populacao1);    
+} else {
+  printf("CARTA 2 venceu na disputa de População: %.0f \n", populacao2);
+} // disputa de população
+
+if (area1 > area2)
+{ printf("CARTA 1 venceu na disputa de Área: %.2f \n", area1);
+} else {
+  printf("CARTA 2 venceu na disputa de Área: %.2f \n", area2);
+} // disputa de área
+
+if (PIB1 > PIB2)
+{ printf("CARTA 1 venceu na disputa de PIB: R$%.2f \n", PIB1);
+} else {
+  printf("CARATA 2 venceu na disputa de PIB: R$%.2f \n", PIB2);  
+} // disputa de PIB
+
+if (ndpt1 > ndpt2)
+{ printf("CARTA 1 venceu na disputa de Pontos turisticos: %d \n", ndpt1);
+} else {
+  printf("CARTA 2 venceu na disputa de Pontos turisticos: %d \n", ndpt2);      
+} // disputa de numero de pontos turisticos
+
+if (dpp1 < dpp2)
+{ printf("CARTA 1 venceu na disputa de Dencidade populacional: %.2f \n", dpp1);
+} else {
+  printf("CARTA 2 venceu na disputa de Dencidade populacional: %.2f \n", dpp2);  
+} // disputa de dencidade 
+
+if (PIBPC1 > PIBPC2)
+{ printf("CARTA 1 venceu na disputa de PIB per capital: %.2f \n", PIBPC1);
+} else {
+  printf("CARTA 2 venceu na disputa de PIB per capital: %.2f\n", PIBPC2);      
+} //disputa de PIB per capital
+
+if (superpoder1 > superpoder2)
+{ printf("CARTA 1 na disputa de super poder: %.0f\n", superpoder1);    
+} else {
+  printf("CARTA 2 venceu na disputa de super poder: %.0f \n", superpoder2);
+} //disputa de super poder
+
 //fim da codificação
 
 
